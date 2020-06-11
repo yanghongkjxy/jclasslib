@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin url="https://github.com/ingokegel/jclasslib">
+    <id>jclasslib</id>
+    <name>jclasslib Bytecode viewer</name>
+    <description>jclasslib is a bytecode viewer for Java class files</description>
+    <version>5.0</version>
+    <vendor url="https://github.com/ingokegel/jclasslib">Ingo Kegel</vendor>
+    <idea-version since-build="192"/>
+
+    <depends>com.intellij.java</depends>
+    <depends optional="true" config-file="withByteCodeViewer.xml">ByteCodeViewer</depends>
+
+    <actions>
+        <action id="ShowByteCodeJclasslib" class="org.gjt.jclasslib.idea.ShowBytecodeAction"
+                text="Show Bytecode With Jclasslib">
+            <add-to-group group-id="QuickActions" anchor="after" relative-to-action="QuickJavaDoc"/>
+        </action>
+    </actions>
+</idea-plugin>
