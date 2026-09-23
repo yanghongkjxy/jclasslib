@@ -1,0 +1,34 @@
+/*
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the license or (at your option) any later version.
+*/
+
+package org.gjt.jclasslib.browser
+
+import org.gjt.jclasslib.browser.detail.FilterPane
+import javax.swing.tree.TreePath
+
+fun constantPoolLink(services: BrowserServices, constantPoolIndex: Int) {
+    val constantPoolPath = services.browserComponent.treePane.getPathForCategory(NodeType.CONSTANT_POOL_ENTRY)
+    val constantPoolNode = constantPoolPath.lastPathComponent as BrowserTreeNode
+    if (constantPoolIndex <= 0 || constantPoolIndex > constantPoolNode.childCount) {
+        return
+    }
+    val newPath = linkPath(services, constantPoolPath, constantPoolNode, constantPoolIndex)
+    services.browserComponent.treePane.tree.apply {
+        selectionPath = newPath
+        scrollPathToVisible(newPath)
+    }
+}
+
+private fun linkPath(services: BrowserServices, constantPoolPath: TreePath, constantPoolNode: BrowserTreeNode, constantPoolIndex: Int): TreePath {
+    val browserComponent = services.browserComponent
+    browserComponent.treePane.tree.selectionPath = constantPoolPath
+    browserComponent.detailPane.constantPoolDetailPane.filterPane.filterMode = FilterPane.FilterMode.ALL
+    browserComponent.history.historyBackward()
+    val targetNode = constantPoolNode.getChildAt(constantPoolIndex - 1)
+    return constantPoolPath.pathByAddingChild(targetNode)
+}
+

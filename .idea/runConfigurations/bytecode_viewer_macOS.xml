@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="bytecode viewer macOS" type="JetRunConfigurationType" singleton="false">
+    <option name="ALTERNATIVE_JRE_PATH" value="BUNDLED" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="MAIN_CLASS_NAME" value="org.gjt.jclasslib.browser.BrowserApplication" />
+    <module name="jclasslib.browser.main" />
+    <shortenClasspath name="NONE" />
+    <option name="VM_PARAMETERS" value="-Dapple.laf.useScreenMenuBar=true -Djclasslib.io.debug=false -Xdock:icon=$ProjectFileDir$/modules/installer/resources/jclasslib.icns -Djclasslib.io.debug=false -Djdk.attach.allowAttachSelf=true" />
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="false" tasks=":agent:dist :data:jvmMainClasses" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

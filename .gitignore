@@ -1,6 +1,17 @@
 .gradle/
+.kotlin/
+.intellijPlatform/
 .idea/workspace.xml
+.idea/kotlinc.xml
+.idea/modules.xml
+.idea/gradle_extensions.xml
+.idea/modules/
+.idea/libraries/
 .idea/shelf/
+.idea/artifacts/
 build/
 media/
+buildSrc/out
 .DS_Store
+.mcp.json
+.junie/
