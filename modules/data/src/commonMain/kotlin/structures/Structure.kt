@@ -101,7 +101,7 @@ abstract class Structure {
     /**
      * Determine if the specified constant is used directly by this structure.
      * @param constant the constant
-     * @param the class file of which the constant is part of
+     * @param classFile the class file of which the constant is part of
      * @return whether the constant is used
      */
     open fun isConstantUsed(constant: Constant, classFile: ClassFile): Boolean {
